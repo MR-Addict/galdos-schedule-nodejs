@@ -1,5 +1,5 @@
 import fs from "fs";
 
-export default function writeLog(message: string) {
-  fs.appendFileSync("log.txt", message);
+export default function writeLog(filename: string, log: string) {
+  fs.appendFileSync(filename, log);
 }
