@@ -1,5 +1,7 @@
-export default function formatDate(date: string) {
-  const newDate = new Date(date);
+export default function formatDate(date: string | Date) {
+  let newDate: Date;
+  if (typeof date === "string") newDate = new Date(date);
+  else newDate = date;
   const localDate = newDate.toLocaleString("zh-cn", { timeZone: "Asia/Shanghai" });
 
   const [dateSplit, timeSplit] = localDate.split(" ");

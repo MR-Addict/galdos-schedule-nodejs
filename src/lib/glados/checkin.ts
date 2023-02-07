@@ -4,7 +4,7 @@ import pairHeaderExpireDate from "./pairHeaderExpireDate";
 export default async function checkin() {
   const GLADOS_COOKIE = process.env.GLADOS_COOKIE;
   const checkinURL = "https://glados.rocks/api/user/checkin";
-  const checkinDate = formatDate(new Date().toString());
+  const checkinDate = formatDate(new Date());
   if (!GLADOS_COOKIE) throw new Error("Please add glados cookie to env");
 
   try {
