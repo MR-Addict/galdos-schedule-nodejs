@@ -2,6 +2,9 @@ version: "3"
 services:
   glados:
     build: .
+    image: glados
     container_name: glados
     network_mode: "bridge"
     restart: unless-stopped
+    volumes:
+      - ./log.txt:/app/log.txt
