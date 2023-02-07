@@ -1,6 +1,8 @@
 import nodemailer from "nodemailer";
 
 export default async function sendEmail(message: string) {
+  if (!process.env.EMAILFROM || !process.env.EMAILPASS) throw new Error("Please add email crential to env");
+
   const mailTransport = nodemailer.createTransport({
     host: "smtp.qq.email",
     service: "qq",

@@ -5,7 +5,7 @@ export default async function checkin() {
   const GLADOS_COOKIE = process.env.GLADOS_COOKIE;
   const checkinURL = "https://glados.rocks/api/user/checkin";
   const checkinDate = formatDate(new Date().toString());
-  if (!GLADOS_COOKIE) throw new Error("Please set glados cookie to env.");
+  if (!GLADOS_COOKIE) throw new Error("Please add glados cookie to env");
 
   try {
     const res = await fetch(checkinURL, {
