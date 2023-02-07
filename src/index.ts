@@ -7,8 +7,6 @@ import { glados } from "@/lib/glados";
 
 config();
 
-glados("both");
+glados("fail");
 
-schedule.scheduleJob("0 6 * * *", async function () {
-  glados("fail");
-});
+schedule.scheduleJob("0 6 * * *", async () => await glados("fail"));
