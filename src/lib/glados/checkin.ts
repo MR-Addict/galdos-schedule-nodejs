@@ -1,4 +1,5 @@
-import { pairHeaderExpireDate, formatDate } from "@/lib";
+import { formatDate } from "@/lib/utils";
+import pairHeaderExpireDate from "./pairHeaderExpireDate";
 
 export default async function checkin() {
   const GLADOS_COOKIE = process.env.GLADOS_COOKIE;

@@ -1,4 +1,4 @@
-import formatDate from "./formatDate";
+import { formatDate } from "@/lib/utils";
 
 export default function pairHeaderExpireDate(headers: Headers) {
   const keys = headers.keys();
