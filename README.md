@@ -13,7 +13,7 @@ GLADOS_COOKIE="Glados account cookie"
 Build docker:
 
 ```bash
-docker build -t scheduled-tasks .
+docker-compose build
 ```
 
 Start docker:
