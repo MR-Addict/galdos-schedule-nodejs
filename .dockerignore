@@ -1,0 +1,10 @@
+dist
+images
+README.md
+Dockerfile
+node_modules
+actions-runner
+docker-compose.yml
+.git
+.github
+.gitignore

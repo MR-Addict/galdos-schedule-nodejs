@@ -1,0 +1,7 @@
+version: "3"
+services:
+  glados:
+    build: .
+    container_name: glados
+    network_mode: "bridge"
+    restart: unless-stopped
