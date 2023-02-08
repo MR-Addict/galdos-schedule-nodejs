@@ -7,4 +7,4 @@ import { glados } from "@/lib/glados";
 
 config();
 
-schedule.scheduleJob("0 6 * * *", async () => await glados("fail"));
+schedule.scheduleJob({ hour: 6, minute: 0, tz: "Asia/Shanghai" }, async () => await glados("fail"));
