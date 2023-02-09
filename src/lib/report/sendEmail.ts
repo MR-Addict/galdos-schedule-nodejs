@@ -9,18 +9,19 @@ export interface EmailType {
 export default async function sendEmail(params: EmailType) {
   if (!process.env.EMAILFROM || !process.env.EMAILPASS) throw new Error("Please add email crential to env");
 
+  const emailFrom = "MR-Addict@qq.com";
   const mailTransport = nodemailer.createTransport({
     host: "smtp.qq.email",
     service: "qq",
     secure: true,
     auth: {
-      user: process.env.EMAILFROM,
+      user: emailFrom,
       pass: process.env.EMAILPASS,
     },
   });
 
   try {
-    await mailTransport.sendMail({ from: "MR-Addict@qq.com", ...params });
+    await mailTransport.sendMail({ from: emailFrom, ...params });
     return true;
   } catch (error) {
     console.error(error);

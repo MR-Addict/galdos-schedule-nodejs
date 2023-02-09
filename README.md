@@ -5,8 +5,8 @@
 Add .env:
 
 ```text
-EMAILFROM="Emial address"
 EMAILPASS="Email password"
+SERVER_CHAN_KEY="server chan key"
 GLADOS_COOKIE="Glados account cookie"
 ```
 
