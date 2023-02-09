@@ -7,4 +7,4 @@ services:
     network_mode: "bridge"
     restart: unless-stopped
     volumes:
-      - ./log/:/app/log
+      - ./data/:/app/data

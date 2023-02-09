@@ -1,6 +1,12 @@
 import nodemailer from "nodemailer";
 
-export default async function sendEmail(message: string) {
+export interface EmailType {
+  to: string;
+  subject: string;
+  text: string;
+}
+
+export default async function sendEmail(params: EmailType) {
   if (!process.env.EMAILFROM || !process.env.EMAILPASS) throw new Error("Please add email crential to env");
 
   const mailTransport = nodemailer.createTransport({
@@ -14,12 +20,7 @@ export default async function sendEmail(message: string) {
   });
 
   try {
-    await mailTransport.sendMail({
-      from: "MR-Addict@qq.com",
-      to: "MR-Addict@qq.com",
-      subject: "Glados checkin report",
-      text: message,
-    });
+    await mailTransport.sendMail({ from: "MR-Addict@qq.com", ...params });
     return { status: true, message: "Sending email succeeded!" };
   } catch (error) {
     console.error(error);
