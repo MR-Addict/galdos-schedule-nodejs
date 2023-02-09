@@ -1,10 +1,10 @@
 import "module-alias/register";
 
 import { config } from "dotenv";
-import schedule from "node-schedule";
 
 import { glados } from "@/lib/glados";
+import { registerJob } from "@/lib/schedule";
 
 config();
 
-schedule.scheduleJob({ hour: 6, minute: 0, tz: "Asia/Shanghai" }, async () => await glados("fail"));
+registerJob({ name: "glados", rule: "0 0 6 * * *" }, async () => await glados("fail"));
