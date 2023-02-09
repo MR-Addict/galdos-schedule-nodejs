@@ -8,6 +8,7 @@ Add .env:
 EMAILPASS="Email password"
 SERVER_CHAN_KEY="server chan key"
 GLADOS_COOKIE="Glados account cookie"
+TELEGRAM_BOT_TOKEN="Telegram bot token"
 ```
 
 Build docker:
