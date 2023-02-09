@@ -21,9 +21,9 @@ export default async function sendEmail(params: EmailType) {
 
   try {
     await mailTransport.sendMail({ from: "MR-Addict@qq.com", ...params });
-    return { status: true, message: "Sending email succeeded!" };
+    return true;
   } catch (error) {
     console.error(error);
-    return { status: false, message: "Sending email failed!" };
+    return false;
   }
 }
