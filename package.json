@@ -9,7 +9,7 @@
   "scripts": {
     "build": "tsc",
     "start": "node --no-warnings dist/index.js",
-    "dev": "concurrently \"npx tsc --watch\" \"nodemon --no-warnings -q dist/index.js\""
+    "dev": "concurrently \"tsc --watch\" \"nodemon --no-warnings -q dist/index.js\""
   },
   "author": "",
   "license": "MIT",

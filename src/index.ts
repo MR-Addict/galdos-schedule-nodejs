@@ -9,6 +9,5 @@ import { registerTask } from "@/lib/utils";
 config();
 
 registerTask("glados-checkin", "0 0 6 * * *", async () => await glados());
-registerTask("test", "*/5 * * * * *", async () => console.log("Hello world"));
 
 api.listen(3000, () => console.log("Listening on http://localhost:3000"));
