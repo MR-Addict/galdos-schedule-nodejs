@@ -1,7 +1,8 @@
 import fs from "fs";
 
+import { logPath } from "@/config";
+
 export default function writeLog(filename: string, log: string) {
-  const path = "log/";
-  if (!fs.existsSync(path)) fs.mkdirSync(path, { recursive: true });
-  fs.appendFileSync(path + filename, log);
+  if (!fs.existsSync(logPath)) fs.mkdirSync(logPath, { recursive: true });
+  fs.appendFileSync(logPath + filename, log);
 }

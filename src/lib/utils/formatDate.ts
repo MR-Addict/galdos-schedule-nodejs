@@ -1,8 +1,10 @@
+import { timeZone } from "@/config";
+
 export default function formatDate(date: string | Date) {
   let newDate: Date;
   if (typeof date === "string") newDate = new Date(date);
   else newDate = date;
-  const localDate = newDate.toLocaleString("zh-cn", { timeZone: "Asia/Shanghai" });
+  const localDate = newDate.toLocaleString("zh-cn", { timeZone });
 
   const [dateSplit, timeSplit] = localDate.split(" ");
   const dateString = dateSplit
