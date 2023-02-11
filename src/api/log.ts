@@ -6,7 +6,8 @@ import { logPath } from "@/config";
 const router = express.Router();
 
 router.use((req: Request, res: Response, next: NextFunction) => {
-  if (!req.headers["cache-control"]) res.set("Cache-control", "public, max-age=3600, must-revalidate");
+  const cacheControl = "public, max-age=3600, must-revalidate";
+  if (req.headers["cache-control"] !== cacheControl) res.set("Cache-Control", cacheControl);
   next();
 });
 
