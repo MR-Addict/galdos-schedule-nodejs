@@ -1,9 +1,14 @@
 import readLastLines from "read-last-lines";
-import express, { Request, Response } from "express";
+import express, { Request, Response, NextFunction } from "express";
 
 import { logPath } from "@/config";
 
 const router = express.Router();
+
+router.use((req: Request, res: Response, next: NextFunction) => {
+  if (!req.headers["cache-control"]) res.set("Cache-control", "public, max-age=3600, must-revalidate");
+  next();
+});
 
 router.get("/", async (req: Request, res: Response) => {
   try {
