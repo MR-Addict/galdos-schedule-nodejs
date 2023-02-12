@@ -20,7 +20,7 @@ router.get("/", async (req: Request, res: Response) => {
     const lines = Number(req.query.lines) || 1;
     const logData = await readLastLines.read(file, lines);
 
-    await redisClient.set(logFile, logData, { EX: 60 * 60, NX: true });
+    await redisClient.set(logFile, logData, { EX: 60 * 10, NX: true });
     return res.status(200).send(logData);
   } catch (error) {
     console.error(error);
