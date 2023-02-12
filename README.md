@@ -5,8 +5,9 @@
 Add .env:
 
 ```text
+REDIS_URL="Redis url"
 EMAILPASS="Email password"
-SERVER_CHAN_KEY="server chan key"
+SERVER_CHAN_KEY="Server chan key"
 GLADOS_COOKIE="Glados account cookie"
 TELEGRAM_BOT_TOKEN="Telegram bot token"
 ```
