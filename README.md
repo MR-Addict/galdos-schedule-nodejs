@@ -5,7 +5,6 @@
 Add .env:
 
 ```text
-REDIS_URL="Redis url"
 EMAILPASS="Email password"
 SERVER_CHAN_KEY="Server chan key"
 GLADOS_COOKIE="Glados account cookie"
