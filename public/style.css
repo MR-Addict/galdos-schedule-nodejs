@@ -1,0 +1,67 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --card-width: 19rem;
+}
+
+body {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  font-family: monospace;
+  background-color: black;
+  color: white;
+}
+
+main {
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* tasks list */
+section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+section h1 {
+  font-size: 1.3rem;
+  font-weight: 800;
+  background: white;
+  color: black;
+  outline: solid 1px white;
+  padding: 0.2rem 0.3rem;
+  border-radius: 0.3rem;
+  width: fit-content;
+  text-transform: capitalize;
+}
+
+/* records list */
+ul {
+  padding: 0.5rem 0.5rem 0.5rem 1.5rem;
+  font-size: 0.9rem;
+  outline: solid 1px white;
+  border-radius: 0.3rem;
+}
+
+/* footer */
+footer {
+  margin-bottom: 1rem;
+}
+
+footer a {
+  color: #bebebe;
+}
+
+footer a:hover {
+  color: #d7d7d7;
+}

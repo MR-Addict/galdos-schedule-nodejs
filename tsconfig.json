@@ -13,5 +13,5 @@
     }
   },
   "include": ["**/*.ts"],
-  "exclude": ["node_modules", "dist", "data"]
+  "exclude": ["node_modules", "dist", "log"]
 }

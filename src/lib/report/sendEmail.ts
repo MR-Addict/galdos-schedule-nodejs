@@ -7,7 +7,7 @@ export interface EmailType {
 }
 
 export default async function sendEmail(params: EmailType) {
-  if (!process.env.EMAILFROM || !process.env.EMAILPASS) throw new Error("Please add email crential to env");
+  if (!process.env.EMAILPASS) throw new Error("Please add email crential to env");
 
   const emailFrom = "MR-Addict@qq.com";
   const mailTransport = nodemailer.createTransport({
