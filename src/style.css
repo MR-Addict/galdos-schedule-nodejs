@@ -15,5 +15,15 @@ section h1 {
 }
 
 section ul {
-  @apply py-3 pr-3 pl-7 rounded-md outline outline-1 outline-white list-decimal;
+  @apply p-3 rounded-md outline outline-1 outline-white;
+}
+
+ul li {
+  @apply relative pl-2;
+}
+
+ul li::before {
+  content: "";
+  position: absolute;
+  @apply left-0 top-[10px] block w-[6px] h-[6px] rounded-full bg-white;
 }
