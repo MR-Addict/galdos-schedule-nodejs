@@ -1,14 +1,9 @@
 import fs from "fs";
-import express, { NextFunction, Request, Response } from "express";
+import express, { Request, Response } from "express";
 
 import { logPath, allTasks } from "@/config";
 
 const router = express.Router();
-
-router.use((req: Request, res: Response, next: NextFunction) => {
-  res.set("Cache-Control", "public, max-age=600");
-  next();
-});
 
 router.get("/", async (req: Request, res: Response) => {
   try {
