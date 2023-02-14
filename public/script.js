@@ -47,12 +47,8 @@ async function renderLog(logName) {
 
 async function renderTasks() {
   const allTasks = await fetchTasks();
-
   if (!allTasks) return false;
-
-  allTasks.forEach(async (item) => {
-    await renderLog(item);
-  });
+  Promise.all(allTasks.map((item) => renderLog(item)));
   return true;
 }
 

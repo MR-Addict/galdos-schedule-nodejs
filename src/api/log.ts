@@ -6,7 +6,7 @@ import { logPath, allTasks } from "@/config";
 const router = express.Router();
 
 router.use((req: Request, res: Response, next: NextFunction) => {
-  res.set("Cache-Control", "public, max-age=600, must-revalidate");
+  res.set("Cache-Control", "public, max-age=600");
   next();
 });
 
