@@ -1,5 +1,4 @@
 import { formatDate } from "@/lib/utils";
-import pairHeaderExpireDate from "./pairHeaderExpireDate";
 
 export default async function checkin() {
   const GLADOS_COOKIE = process.env.GLADOS_COOKIE;
@@ -19,8 +18,7 @@ export default async function checkin() {
     if (result.code !== 0 && result.code !== 1) return { status: false, message: "Checkin failed!" };
 
     const leftDays = parseInt(result.list[0].balance);
-    const cookieExpireDate = pairHeaderExpireDate(res.headers);
-    const message = `[${checkinDate}] You got ${leftDays} days left, and your cookie expires at ${cookieExpireDate}`;
+    const message = `[${checkinDate}] You got ${leftDays} days left.`;
 
     return { status: true, message };
   } catch (error) {
