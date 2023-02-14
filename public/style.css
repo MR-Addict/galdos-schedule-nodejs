@@ -36,11 +36,7 @@ section {
 section h1 {
   font-size: 1.3rem;
   font-weight: 800;
-  background: white;
-  color: black;
-  outline: solid 1px white;
-  padding: 0.2rem 0.3rem;
-  border-radius: 0.3rem;
+  color: white;
   width: fit-content;
   text-transform: capitalize;
 }
@@ -54,6 +50,9 @@ ul {
   display: flex;
   flex-direction: column;
   gap: 0.2rem;
+  max-width: calc(100dvw - 2rem);
+  overflow-x: auto;
+  white-space: nowrap;
 }
 
 /* footer */
