@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply p-4 min-h-[100dvh] flex flex-col items-center justify-start bg-black text-white;
+}
+
+section {
+  @apply flex flex-col gap-1;
+}
+
+section h1 {
+  @apply capitalize font-semibold text-lg;
+}
+
+section ul {
+  @apply py-3 pr-3 pl-7 rounded-md outline outline-1 outline-white list-decimal;
+}
