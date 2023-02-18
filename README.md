@@ -4,7 +4,7 @@
 
 - [https://schedule.mraddict.one](https://schedule.mraddict.one)
 
-## Deploy
+## 2. Deploy
 
 Add .env:
 
