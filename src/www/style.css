@@ -7,15 +7,6 @@ body {
   @apply min-h-[100dvh] px-5 py-5 md:px-48 flex flex-col items-center justify-center gap-5;
 }
 
-/* main log */
-section {
-  @apply hidden flex-col;
-}
-
-section.active {
-  @apply flex;
-}
-
 /* buttons */
 button {
   @apply flex flex-row items-center capitalize;
@@ -34,7 +25,16 @@ button.active::before {
   @apply border-green-600;
 }
 
-/* logs */
+/* main log body */
+ul {
+  @apply hidden flex-col;
+}
+
+ul.active {
+  @apply flex;
+}
+
+/* logs table */
 ul > li {
   @apply px-2 py-1 border border-b-0 border-green-600 flex flex-col;
 }
