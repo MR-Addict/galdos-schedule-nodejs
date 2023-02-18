@@ -1,0 +1,9 @@
+main
+  each log in logs
+    section
+      h1 #{log.name}(#{log.data.length})
+      ul
+        each item in log.data
+          li
+            span(class="text-gray-600") #{item.date} (#{item.timeAgo})
+            span(class="text-gray-800")= item.message

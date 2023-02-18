@@ -2,31 +2,46 @@
 @tailwind components;
 @tailwind utilities;
 
+/* body */
 body {
-  @apply min-h-[100dvh];
+  @apply min-h-[100dvh] px-5 py-5 md:px-48 flex flex-col items-center justify-center gap-5;
+}
+
+/* main */
+body > main {
+  @apply w-full;
 }
 
 section {
   @apply flex flex-col;
 }
 
-section h1 {
+section > h1 {
   @apply flex flex-row items-center gap-1 capitalize font-semibold text-lg;
 }
 
-section h1::before {
+section > h1::before {
   content: "";
   @apply block rounded-full w-3 h-3 border-4 border-green-600;
 }
 
-ul li {
+ul > li {
   @apply px-2 py-1 border border-b-0 border-green-600 flex flex-col;
 }
 
-ul li:first-of-type {
+ul > li:first-of-type {
   @apply rounded-t-md;
 }
 
-ul li:last-of-type {
+ul > li:last-of-type {
   @apply border-b rounded-b-md;
+}
+
+/* footer */
+footer {
+  @apply flex flex-row gap-2;
+}
+
+footer > span > a {
+  @apply underline;
 }

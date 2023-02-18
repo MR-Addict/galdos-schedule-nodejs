@@ -1,20 +1,6 @@
 doctype html
 html(lang="en")
-  head
-    meta(charset="UTF-8")
-    meta(http-equiv="X-UA-Compatible", content="IE=edge")
-    meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    meta(name="description" content="Node scheduled tasks")
-    link(rel="shortcut icon", href="favicon.ico", type="image/x-icon")
-    link(rel="stylesheet", href="style.css")
-    title Scheduled Tasks
+  include head.pug
   body
-    main(class="px-5 py-3 md:px-48 w-full flex flex-col gap-3")
-      each log in logs
-        section
-          h1 #{log.name}(#{log.data.length})
-          ul
-            each item in log.data
-              li
-                span(class="text-gray-600") #{item.date} (#{item.timeAgo})
-                span(class="text-gray-800")= item.message
+    include body.pug
+    include footer.pug
