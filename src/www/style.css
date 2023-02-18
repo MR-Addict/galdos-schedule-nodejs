@@ -22,7 +22,7 @@ button {
 }
 
 button.active {
-  @apply text-green-600;
+  @apply text-green-700;
 }
 
 button::before {
