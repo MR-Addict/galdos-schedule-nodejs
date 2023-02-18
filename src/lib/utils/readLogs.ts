@@ -4,7 +4,7 @@ import { parseStream } from "fast-csv";
 
 import { LogType } from "@/types";
 import { logPath } from "@/config";
-import { timeAgo } from "@/lib/utils";
+import { formatDate, timeAgo } from "@/lib/utils";
 
 async function parseCsv(path: string) {
   const data: LogType[] = await new Promise((resolve, reject) => {
@@ -14,8 +14,9 @@ async function parseCsv(path: string) {
     parseStream(readableStream, { headers: true })
       .on("error", reject)
       .on("data", (row) => {
+        const formatedDate = formatDate(row.date);
         const ago = timeAgo(row.date).firstNoneZero;
-        data.push({ ...row, timeAgo: `${ago.value} ${ago.key} ago` });
+        data.push({ ...row, date: formatedDate, timeAgo: `${ago.value} ${ago.key} ago` });
       })
       .on("end", () => resolve(data));
   });
