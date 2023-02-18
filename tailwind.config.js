@@ -1,5 +1,5 @@
 module.exports = {
-  content: ["./public/index.html"],
+  content: ["src/views/index.pug"],
   theme: {
     extend: {},
   },

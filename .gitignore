@@ -1,6 +1,7 @@
-node_modules
 dist
-.env
 log
 data
+node_modules
+public/style.css
+.env
 .vscode
