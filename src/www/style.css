@@ -3,27 +3,30 @@
 @tailwind utilities;
 
 body {
-  @apply p-4 min-h-[100dvh] flex flex-col items-center justify-start bg-black text-white;
+  @apply p-4 min-h-[100dvh] flex flex-col items-center justify-start;
 }
 
 section {
-  @apply flex flex-col gap-1;
+  @apply flex flex-col;
 }
 
 section h1 {
-  @apply capitalize font-semibold text-lg;
+  @apply flex flex-row items-center gap-1 capitalize font-semibold text-lg;
 }
 
-section ul {
-  @apply p-3 rounded-md outline outline-1 outline-white;
+section h1::before {
+  content: "";
+  @apply block rounded-full w-3 h-3 border-4 border-green-600;
 }
 
 ul li {
-  @apply relative pl-2;
+  @apply px-2 py-1 border border-b-0 border-green-600 flex flex-col;
 }
 
-ul li::before {
-  content: "";
-  position: absolute;
-  @apply left-0 top-[10px] block w-[6px] h-[6px] rounded-full bg-white;
+ul li:first-of-type {
+  @apply rounded-t-md;
+}
+
+ul li:last-of-type {
+  @apply border-b rounded-b-md;
 }

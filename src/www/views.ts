@@ -4,8 +4,8 @@ import { readLogs } from "@/lib/utils";
 
 const router = express.Router();
 
-router.get("/", (req: Request, res: Response) => {
-  const logs = readLogs();
+router.get("/", async (req: Request, res: Response) => {
+  const logs = await readLogs();
   return res.render("index", { logs });
 });
 

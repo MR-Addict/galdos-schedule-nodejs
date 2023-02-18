@@ -1,4 +1,5 @@
-export interface logType {
-  log: string;
-  data: string[];
+export interface LogType {
+  date: string;
+  timeAgo: string;
+  message: string;
 }

@@ -9,10 +9,12 @@ html(lang="en")
     link(rel="stylesheet", href="style.css")
     title Scheduled Tasks
   body
-    main(class="flex flex-col gap-3")
+    main(class="w-full max-w-lg flex flex-col gap-3")
       each log in logs
         section
-          h1= log.name
+          h1 #{log.name}(#{log.data.length})
           ul
-            each item in log.data
-              li= item
+            each item, index in log.data
+              li
+                span(class="text-gray-600") #{item.date} (#{item.timeAgo})
+                span(class="text-gray-800")= item.message
