@@ -6,7 +6,6 @@ const router = express.Router();
 
 router.get("/", (req: Request, res: Response) => {
   const logs = readLogs();
-  res.set("Cache-Control", "public, max-age=600");
   return res.render("index", { logs });
 });
 

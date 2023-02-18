@@ -3,12 +3,12 @@ import express from "express";
 
 import views from "./views";
 
-const www = express();
+const app = express();
 
-www.use("/", views);
-www.use(express.static(path.join(process.cwd(), "public"), { maxAge: 1000 * 60 * 10 }));
+app.use("/", views);
+app.use(express.static(path.join(process.cwd(), "public"), { maxAge: 1000 * 60 * 60 * 4 }));
 
-www.set("view engine", "pug");
-www.set("views", path.join(process.cwd(), "src/views"));
+app.set("view engine", "pug");
+app.set("views", path.join(process.cwd(), "src/www/views"));
 
-export default www;
+export default app;

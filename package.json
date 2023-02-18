@@ -7,13 +7,13 @@
     "@": "dist"
   },
   "watch": {
-    "build-css": "src/style.css"
+    "build:css": "src/style.css"
   },
   "scripts": {
-    "build": "npm run build-css && tsc",
+    "build": "npm run build:css && tsc",
     "start": "node --no-warnings dist/index.js",
-    "build-css": "postcss src/style.css -o public/style.css",
-    "dev": "npm run build && concurrently \"tsc --watch\" \"nodemon --no-warnings -q dist/index.js\" \"npm-watch\""
+    "build:css": "postcss src/www/style.css -o public/style.css",
+    "dev": "npm run build:css && concurrently \"tsc --watch\" \"nodemon --no-warnings -q dist/index.js\" \"npm-watch\""
   },
   "author": "MR-Addict",
   "license": "MIT",
