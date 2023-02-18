@@ -1,7 +1,7 @@
-dist
-log
-data
-node_modules
-public/style.css
+/dist
+/data
+/node_modules
+/public/style.css
+/log
 .env
 .vscode

@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  @apply p-4 min-h-[100dvh] flex flex-col items-center justify-start;
+  @apply min-h-[100dvh];
 }
 
 section {

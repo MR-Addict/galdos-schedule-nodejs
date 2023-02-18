@@ -9,7 +9,7 @@ html(lang="en")
     link(rel="stylesheet", href="style.css")
     title Scheduled Tasks
   body
-    main(class="w-full max-w-lg flex flex-col gap-3")
+    main(class="px-5 py-3 md:px-48 w-full flex flex-col gap-3")
       each log in logs
         section
           h1 #{log.name}(#{log.data.length})

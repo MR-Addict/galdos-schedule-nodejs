@@ -1,6 +1,6 @@
 import express, { Request, Response } from "express";
 
-import { readLogs } from "@/lib/utils";
+import { readLogs } from "@/lib/log";
 
 const router = express.Router();
 

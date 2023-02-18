@@ -30,7 +30,7 @@ async function readLogs() {
   for (let fileName of fileNames) {
     const filePath = path.join(logPath, fileName);
     const logs = await parseCsv(filePath);
-    data.push({ name: fileName.replace(".csv", ""), data: logs });
+    data.push({ name: fileName.replace(/\.[^/.]+$/, ""), data: logs });
   }
   return data;
 }
