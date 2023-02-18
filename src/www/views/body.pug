@@ -1,7 +1,14 @@
-main
-  each log in logs
-    section
-      h1 #{log.name}(#{log.data.length})
+h1(class="text-xl font-bold text-center text-gray-700") Scheduled Tasks
+main(class="w-full flex flex-col gap-1")
+
+  header(class="flex flex-row gap-2 md:gap-3")
+    each log, index in logs
+      button(type="button" tab-name=log.name onclick=`toggle("${log.name}")` class={active:index===0})
+        span #{log.name}
+        span (#{log.data.length})
+
+  each log, index in logs
+    section(tab-name=log.name class={active:index===0})
       ul
         each item in log.data
           li
