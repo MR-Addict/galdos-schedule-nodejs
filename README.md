@@ -9,6 +9,7 @@
 Add .env:
 
 ```text
+MONGODB_URL="Mongodb url"
 EMAILPASS="Email password"
 SERVER_CHAN_KEY="Server chan key"
 GLADOS_COOKIE="Glados account cookie"
