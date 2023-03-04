@@ -1,13 +1,7 @@
 header(class="text-xl font-bold text-center text-gray-700") Scheduled Tasks
-main(class="w-full flex-1 flex flex-col gap-1")
-  if !logs.status||!logs.data.length
+main(class="w-full flex-1 flex flex-col gap-3")
+  if !status||!data.length
     h1(class="flex-1 flex items-center justify-center") Nothing here yet!
   else
-    div
-      span(class="capitalize") #{logs.name}
-      span (#{logs.data.length})
-    ul
-      each log in logs.data
-        li
-          span(class="text-gray-600") #{log.date} (#{log.timeAgo})
-          span(class="text-gray-800")= log.message
+    include components/table.pug
+    include components/pagination.pug

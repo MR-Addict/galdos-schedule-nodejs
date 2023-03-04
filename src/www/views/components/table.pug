@@ -1,0 +1,9 @@
+section(aria-label="table")
+  div(class="flex flex-row items-center px-1")
+    span(class="capitalize flex flex-row gap-2 items-center text-lg font-semibold before:block before:content-[''] before:w-1.5 before:h-1.5 before:rounded-full before:outline before:outline-[0.2rem] before:outline-green-600") #{collection}
+    span (#{pagination.count}/#{pagination.totalCount})
+  ul
+    each log in data
+      li
+        span(class="text-gray-600") #{log.date} (#{log.timeAgo})
+        span(class="text-gray-800")= log.message

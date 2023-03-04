@@ -23,3 +23,12 @@ ul > li:first-of-type {
 ul > li:last-of-type {
   @apply border-b rounded-b-md;
 }
+
+/* pagination button */
+.pagination-button {
+  @apply px-2 rounded-full border border-gray-300;
+}
+
+.pagination-button.active {
+  @apply bg-green-600 text-white border-green-600;
+}
