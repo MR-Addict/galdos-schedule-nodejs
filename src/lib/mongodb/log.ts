@@ -3,6 +3,20 @@ import { formatDate, timeAgo } from "@/lib/utils";
 
 import clientPromise from "./clientPromise";
 
+async function collectios() {
+  try {
+    const client = await clientPromise;
+    const db = client.db("log");
+    const collections = await db.listCollections().toArray();
+    return {
+      status: true,
+      data: collections.map((collection) => collection.name),
+    };
+  } catch (error) {
+    return { status: false, message: "Cannot establish connection with mongodb!" };
+  }
+}
+
 async function insert(collection: string, payload: { [key: string]: string }) {
   try {
     const client = await clientPromise;
@@ -45,6 +59,6 @@ async function query(collection: string, pagination: { page: number; perPage: nu
   }
 }
 
-const log = { insert, query };
+const log = { insert, query, collectios };
 
 export default log;

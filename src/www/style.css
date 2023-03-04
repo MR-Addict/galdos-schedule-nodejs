@@ -32,3 +32,17 @@ ul > li:last-of-type {
 .pagination-button.active {
   @apply bg-green-600 text-white border-green-600;
 }
+
+/* collection-header */
+.collection-header {
+  @apply capitalize flex flex-row gap-2 items-center text-lg font-semibold text-gray-700;
+}
+
+.collection-header::before {
+  content: "";
+  @apply block w-1.5 h-1.5 rounded-full outline outline-[0.2rem] text-gray-800;
+}
+
+.collection-header::before.active {
+  @apply outline-green-600;
+}
