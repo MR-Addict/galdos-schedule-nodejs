@@ -3,7 +3,9 @@
 - const array = Array.from({length: totalPages}, (_, i) => i + 1)
 
 section(aria-label="pagination" class="flex flex-row items-center justify-center gap-2")
-  a(href=(`/?log=${logs.collection}&page=1`) class="text-xs font-bold") |<
+  a(href=(`/?log=${logs.collection}&page=1`) class="text-xs font-bold pagination-button py-1") <
+  if totalPages>3&&currentPage>2
+    span ...
   if currentPage===1
     each page in array.slice(0,currentPage+2)
       a(href=(`/?log=${logs.collection}&page=${page}`) class="pagination-button" class=currentPage===page?"active":"") #{page}
@@ -11,6 +13,8 @@ section(aria-label="pagination" class="flex flex-row items-center justify-center
     each page in array.slice(totalPages-3<0?0:totalPages-3,totalPages)
       a(href=(`/?log=${logs.collection}&page=${page}`) class="pagination-button" class=currentPage===page?"active":"") #{page}
   else
-    each page in array.slice(currentPage-2<0,currentPage+1)
+    each page in array.slice(currentPage-2,currentPage+1)
       a(href=(`/?log=${logs.collection}&page=${page}`) class="pagination-button" class=currentPage===page?"active":"") #{page}
-  a(href=(`/?log=${logs.collection}&page=${logs.pagination.totalPages}`) class="text-xs font-bold") >|
+  if totalPages>3&&currentPage<totalPages-1
+    span ...
+  a(href=(`/?log=${logs.collection}&page=${logs.pagination.totalPages}`) class="text-xs font-bold pagination-button py-1") >
