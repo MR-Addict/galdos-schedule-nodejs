@@ -44,8 +44,8 @@ async function query(collection: string, pagination: { page: number; perPage: nu
       .toArray();
 
     const data: LogType[] = result.map((log) => {
-      const ago = timeAgo(log.date).firstNoneZero;
-      return { ...log, _id: log._id.toString(), date: formatDate(log.date), timeAgo: `${ago.value} ${ago.key} ago` };
+      const ago = timeAgo(log.date).timeago;
+      return { ...log, _id: log._id.toString(), date: formatDate(log.date), timeAgo: `${ago.value}${ago.key} ago` };
     });
 
     return {

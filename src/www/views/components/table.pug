@@ -5,5 +5,5 @@ section(aria-label="table")
   ul
     each log in logs.data
       li
-        span(class="text-gray-600") #{log.date} (#{log.timeAgo})
+        span(class="text-gray-600") #{log.date}(#{log.timeAgo})
         span(class="text-gray-800")= log.message
