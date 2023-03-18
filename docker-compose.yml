@@ -4,7 +4,9 @@ services:
     build: .
     image: scheduled-tasks
     container_name: scheduled-tasks
-    network_mode: "host"
+    network_mode: "bridge"
     restart: unless-stopped
+    ports:
+      - 3000:3000
     volumes:
       - ./log/:/app/log
