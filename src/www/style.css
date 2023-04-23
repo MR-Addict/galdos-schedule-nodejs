@@ -35,12 +35,14 @@ ul > li:last-of-type {
 
 /* collection-header */
 .collection-header {
-  @apply capitalize flex flex-row gap-2 items-center text-lg font-semibold text-gray-700;
+  @apply capitalize flex flex-row gap-1 items-center text-gray-700;
 }
 
 .collection-header::before {
   content: "";
-  @apply block w-1.5 h-1.5 rounded-full outline outline-[0.3rem] text-gray-800;
+  width: 5px;
+  height: 5px;
+  @apply block rounded-full outline outline-[0.2rem] text-gray-600;
 }
 
 .collection-header::before.active {

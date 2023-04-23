@@ -14,6 +14,7 @@ EMAILPASS="Email password"
 SERVER_CHAN_KEY="Server chan key"
 GLADOS_COOKIE="Glados account cookie"
 TELEGRAM_BOT_TOKEN="Telegram bot token"
+OPENWEATHER_APIKEY="Create a openweather key
 ```
 
 Build docker:

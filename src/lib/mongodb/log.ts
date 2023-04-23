@@ -10,7 +10,7 @@ async function collectios() {
     const collections = await db.listCollections().toArray();
     return {
       status: true,
-      data: collections.map((collection) => collection.name),
+      data: collections.map((collection) => collection.name).reverse(),
     };
   } catch (error) {
     return { status: false, message: "Cannot establish connection with mongodb!" };
