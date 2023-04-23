@@ -4,7 +4,7 @@ import { sendEmail } from "@/lib/report";
 async function fetchWeather() {
   const OPENWEATHER_APIKEY = process.env.OPENWEATHER_APIKEY;
   const openweather_url = `https://api.openweathermap.org/data/2.5/weather?q=nanjing&units=metric&appid=${OPENWEATHER_APIKEY}`;
-  if (!OPENWEATHER_APIKEY) throw new Error("Please add glados cookie to env");
+  if (!OPENWEATHER_APIKEY) throw new Error("Please add OPENWEATHER_APIKEY to env");
 
   try {
     const result = await fetch(openweather_url).then((res) => res.json());

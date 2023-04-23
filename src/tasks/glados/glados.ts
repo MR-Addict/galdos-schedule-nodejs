@@ -4,7 +4,7 @@ import { sendEmail } from "@/lib/report";
 async function checkin() {
   const GLADOS_COOKIE = process.env.GLADOS_COOKIE;
   const checkinURL = "https://glados.rocks/api/user/checkin";
-  if (!GLADOS_COOKIE) throw new Error("Please add glados cookie to env");
+  if (!GLADOS_COOKIE) throw new Error("Please add GLADOS_COOKIE to env");
 
   try {
     const res = await fetch(checkinURL, {
