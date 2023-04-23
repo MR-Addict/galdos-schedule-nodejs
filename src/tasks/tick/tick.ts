@@ -1,4 +1,5 @@
 import { log } from "@/lib/mongodb";
+import { sendEmail } from "@/lib/report";
 
 async function fetchWeather() {
   const OPENWEATHER_APIKEY = process.env.OPENWEATHER_APIKEY;
@@ -18,9 +19,13 @@ async function fetchWeather() {
   }
 }
 
-export default async function tick() {
+export default async function tick(report: "fail" | "success" | "both" = "fail") {
   const result = await fetchWeather();
 
   console.log(result.message);
   log.insert("tick", { date: new Date().toISOString(), message: result.message });
+
+  if (report === "both" || (report === "success" && result.status) || (report === "fail" && !result.status)) {
+    sendEmail({ to: "MR-Addict@qq.com", subject: "Glados Checkin", text: result.message });
+  }
 }
