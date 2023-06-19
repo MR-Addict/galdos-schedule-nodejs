@@ -10,7 +10,7 @@ async function checkin() {
     const res = await fetch(checkinURL, {
       method: "POST",
       body: JSON.stringify({ token: "glados.network" }),
-      headers: { Cookie: GLADOS_COOKIE, "Content-Type": "application/json" },
+      headers: { Cookie: GLADOS_COOKIE, "Content-Type": "application/json" }
     });
     if (!res.ok) return { status: false, message: "Something went wrong while checkin!" };
 

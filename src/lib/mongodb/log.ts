@@ -10,7 +10,7 @@ async function collectios() {
     const collections = await db.listCollections().toArray();
     return {
       status: true,
-      data: collections.map((collection) => collection.name).reverse(),
+      data: collections.map((collection) => collection.name).reverse()
     };
   } catch (error) {
     return { status: false, message: "Cannot establish connection with mongodb!" };
@@ -52,7 +52,7 @@ async function query(collection: string, pagination: { page: number; perPage: nu
       status: true,
       collection: collection,
       pagination: { count: data.length, totalCount: totalCount, currentPage: pagination.page, totalPages: totalPages },
-      data,
+      data
     };
   } catch (error) {
     return { status: false, message: "Error occurred while communicate with mongodb!" };

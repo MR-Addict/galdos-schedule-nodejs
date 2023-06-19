@@ -6,7 +6,7 @@ export default async function serverChan(title: string, desp: string) {
     const res = await fetch(`https://sc.ftqq.com/${SERVER_CHAN_KEY}.send`, {
       method: "POST",
       body: new URLSearchParams({ title, desp: desp.replace(/\n/g, "\n\n") }),
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      headers: { "Content-Type": "application/x-www-form-urlencoded" }
     });
     if (res.ok) return true;
     else return false;

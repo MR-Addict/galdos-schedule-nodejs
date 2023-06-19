@@ -16,8 +16,8 @@ export default async function sendEmail(params: EmailType) {
     secure: true,
     auth: {
       user: emailFrom,
-      pass: process.env.EMAILPASS,
-    },
+      pass: process.env.EMAILPASS
+    }
   });
 
   try {

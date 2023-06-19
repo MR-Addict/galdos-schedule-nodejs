@@ -4,7 +4,7 @@ const timeagoMap = {
   day: "d",
   hour: "h",
   minute: "min",
-  second: "s",
+  second: "s"
 };
 
 export default function timeAgo(date: string) {

@@ -6,7 +6,7 @@ export default async function telegram(text: string, chat_id: string = "15507355
     const res = await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
       method: "POST",
       body: new URLSearchParams({ chat_id, text }),
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      headers: { "Content-Type": "application/x-www-form-urlencoded" }
     });
     if (res.ok) return true;
     else return false;
